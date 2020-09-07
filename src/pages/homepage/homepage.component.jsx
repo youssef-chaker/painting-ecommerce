@@ -11,18 +11,51 @@ import {
 } from "./homepage.styles";
 import { Button } from "../../components/button/button.component";
 import Card from "../../components/card/card.component";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.scss";
-import SwiperCore, { EffectCube } from "swiper";
-import "swiper/components/effect-fade/effect-fade.scss";
-
-SwiperCore.use([EffectCube]);
-
-const ColoredCard = ({ color }) => (
-  <div
-    style={{ background: `${color}`, width: "200px", height: "200px" }}
-  ></div>
-);
+import Swiper from "react-id-swiper";
+const CubeEffect = () => {
+  const params = {
+    effect: "cube",
+    grabCursor: true,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  };
+  return (
+    <Swiper {...params}>
+      <div
+        style={{
+          background: "red",
+        }}
+      />
+      <div
+        style={{
+          backgroundImage: "url(http://lorempixel.com/600/600/nature/2)",
+        }}
+      />
+      <div
+        style={{
+          backgroundImage: "url(http://lorempixel.com/600/600/nature/3)",
+        }}
+      />
+      <div
+        style={{
+          backgroundImage: "url(http://lorempixel.com/600/600/nature/4)",
+        }}
+      />
+      <div
+        style={{
+          backgroundImage: "url(http://lorempixel.com/600/600/nature/5)",
+        }}
+      />
+    </Swiper>
+  );
+};
 
 const HomePage = () => (
   <div>
@@ -37,30 +70,7 @@ const HomePage = () => (
         </Paragraph>
         <Button>Button</Button>
       </Left>
-      <Swiper
-        effect="cube"
-        grabCursor={true}
-        pagination={true}
-        cubeEffect={{
-          shadow: true,
-          slideShadows: true,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        }}
-      >
-        <SwiperSlide
-          style={{ background: "red", width: "200px", height: "200px" }}
-        ></SwiperSlide>
-        <SwiperSlide
-          style={{ background: "blue", width: "200px", height: "200px" }}
-        ></SwiperSlide>
-        <SwiperSlide
-          style={{ background: "green", width: "200px", height: "200px" }}
-        ></SwiperSlide>
-        <SwiperSlide
-          style={{ background: "black", width: "200px", height: "200px" }}
-        ></SwiperSlide>
-      </Swiper>
+      <CubeEffect />
     </HomePageContainer>
     <Waves />
     <SecondPage>

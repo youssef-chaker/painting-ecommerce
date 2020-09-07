@@ -9,53 +9,8 @@ import {
   SecondPage,
   CardsContainer,
 } from "./homepage.styles";
-import { Button } from "../../components/button/button.component";
+import Button from "../../components/button/button.component";
 import Card from "../../components/card/card.component";
-import Swiper from "react-id-swiper";
-const CubeEffect = () => {
-  const params = {
-    effect: "cube",
-    grabCursor: true,
-    cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.94,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  };
-  return (
-    <Swiper {...params}>
-      <div
-        style={{
-          background: "red",
-        }}
-      />
-      <div
-        style={{
-          backgroundImage: "url(http://lorempixel.com/600/600/nature/2)",
-        }}
-      />
-      <div
-        style={{
-          backgroundImage: "url(http://lorempixel.com/600/600/nature/3)",
-        }}
-      />
-      <div
-        style={{
-          backgroundImage: "url(http://lorempixel.com/600/600/nature/4)",
-        }}
-      />
-      <div
-        style={{
-          backgroundImage: "url(http://lorempixel.com/600/600/nature/5)",
-        }}
-      />
-    </Swiper>
-  );
-};
 
 const HomePage = () => (
   <div>
@@ -70,7 +25,6 @@ const HomePage = () => (
         </Paragraph>
         <Button>Button</Button>
       </Left>
-      <CubeEffect />
     </HomePageContainer>
     <Waves />
     <SecondPage>

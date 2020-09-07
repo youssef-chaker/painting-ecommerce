@@ -12,9 +12,9 @@ const Header = () => (
       <OptionLink to="/">LOGO</OptionLink>
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to="/one">ONE</OptionLink>
-      <OptionLink to="/two">TWO</OptionLink>
-      <OptionLink to="/three">THREE</OptionLink>
+      <OptionLink to="/shop">Shop</OptionLink>
+      <OptionLink to="/contact">Contact</OptionLink>
+      <OptionLink to="/Signin">Sign in</OptionLink>
     </OptionsContainer>
   </HeaderContainer>
 );

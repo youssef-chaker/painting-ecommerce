@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomePageContainer = styled.div`
-  padding: 0 120px;
+  padding: 0 160px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 50vh;

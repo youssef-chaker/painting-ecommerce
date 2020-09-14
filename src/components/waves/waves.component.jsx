@@ -2,7 +2,11 @@ import React from "react";
 import "./waves.styles.scss";
 
 const Waves = () => (
-  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <svg
+    className="wave"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+  >
     <path
       fill="#333"
       fill-opacity="1"

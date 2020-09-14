@@ -11,6 +11,7 @@ import {
 } from "./homepage.styles";
 import Button from "../../components/button/button.component";
 import Card from "../../components/card/card.component";
+import SwiperCoverFlow from "../../components/swiper-coverflow/swiper-coverflow.component";
 
 const HomePage = () => (
   <div>
@@ -25,6 +26,7 @@ const HomePage = () => (
         </Paragraph>
         <Button>Button</Button>
       </Left>
+      <SwiperCoverFlow />
     </HomePageContainer>
     <Waves />
     <SecondPage>

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const HomePageContainer = styled.div`
-  padding: 0 160px;
+  padding: 0 140px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 33% 67%;
   height: 50vh;
   margin-bottom: 40vh;
 `;

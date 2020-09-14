@@ -2,10 +2,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   EffectCoverflow,
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
+  // Navigation,
+  // Pagination,
+  // Scrollbar,
+  // A11y,
 } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/effect-coverflow/effect-coverflow.scss";
@@ -17,7 +17,7 @@ import painting2 from "../../assets/painting2.jpg";
 import painting3 from "../../assets/painting3.jpg";
 import painting4 from "../../assets/painting4.jpg";
 import painting5 from "../../assets/painting5.jpg";
-import SwiperCoverFlowImage from "../swiper-coverflow-image/swiper-coverflow-image";
+// import SwiperCoverFlowImage from "../swiper-coverflow-image/swiper-coverflow-image";
 
 SwiperCore.use([EffectCoverflow]);
 

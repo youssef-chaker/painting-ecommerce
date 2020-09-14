@@ -13,6 +13,7 @@ const SignUp = () => (
     <span>sign up with your email and password</span>
     <form>
       <InputsContainer>
+        <FormInput label="username" name="username" />
         <FormInput label="email" type="email" name="email" />
         <FormInput label="password" type="password" name="password" />
         <FormInput

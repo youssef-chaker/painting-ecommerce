@@ -28,6 +28,7 @@ export const SecondPage = styled.div`
   height: 100vh;
   background: #333;
   padding: 0 120px;
+  position: relative;
 `;
 
 export const CardsContainer = styled.div`

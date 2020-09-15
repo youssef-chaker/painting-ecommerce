@@ -1,8 +1,30 @@
-import { all, call, takeLatest } from "redux-saga/effects";
+import { all, call, takeLatest, put } from "redux-saga/effects";
 import UserActionTypes from "./user.types";
+import { signInSuccess, signInFailure } from "./user.actions";
 
-export function* signIn({ payload: { username, password } }) {
-  const user = yield fetch("");
+async function authenticateAsync(user) {
+  const response = await fetch(
+    "https://localhost:5001/api/Users/authenticate",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }
+  );
+  const json = await response.json();
+  if (!json.token) throw Error(json.message);
+  return json;
+}
+
+export function* signIn({ payload }) {
+  try {
+    const user = yield call(authenticateAsync, payload);
+    yield put(signInSuccess(user));
+  } catch (error) {
+    yield put(signInFailure(error.message));
+  }
 }
 
 export function* onSignInStart() {
@@ -10,5 +32,5 @@ export function* onSignInStart() {
 }
 
 export function* userSagas() {
-  yield all([]);
+  yield all([call(onSignInStart)]);
 }

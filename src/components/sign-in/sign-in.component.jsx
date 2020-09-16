@@ -8,8 +8,9 @@ import FormInput from "../../components/form-input/form-input.component";
 import Button from "../../components/button/button.component";
 import { connect } from "react-redux";
 import { signInStart } from "../../redux/user/user.actions";
+import ErrorMessage from "../error-message/error-message.component";
 
-const SignIn = ({ signInStart }) => {
+const SignIn = ({ signInStart, error }) => {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -17,7 +18,6 @@ const SignIn = ({ signInStart }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(credentials);
     signInStart(credentials);
   };
 
@@ -30,6 +30,8 @@ const SignIn = ({ signInStart }) => {
     <SignInContainer>
       <SignInTitle>Already a member ?</SignInTitle>
       <span>sign in with your email and password</span>
+      <br />
+      {error ? <ErrorMessage message={error} /> : ""}
       <form onSubmit={handleSubmit}>
         <InputsContainer>
           <FormInput
@@ -54,4 +56,6 @@ const mapDispatchToProps = (dispatch) => ({
   signInStart: (credentials) => dispatch(signInStart(credentials)),
 });
 
-export default connect(null, mapDispatchToProps)(SignIn);
+const mapStateToProps = ({ user: { loginError } }) => ({ error: loginError });
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

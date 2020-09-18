@@ -9,6 +9,7 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import { signOut } from "../../redux/user/user.actions";
+import UserMenu from "../user-menu/user-menu.component";
 
 const Header = ({ currentUser, signOut }) => (
   <HeaderContainer>
@@ -19,9 +20,7 @@ const Header = ({ currentUser, signOut }) => (
       <OptionLink to="/shop">Shop</OptionLink>
       <OptionLink to="/contact">Contact</OptionLink>
       {currentUser ? (
-        <OptionLink as="div" onClick={signOut}>
-          Sign out
-        </OptionLink>
+        <UserMenu count={6} currentUser />
       ) : (
         <OptionLink to="/Signin">Sign in</OptionLink>
       )}

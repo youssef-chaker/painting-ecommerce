@@ -3,6 +3,7 @@ import Header from "./components/header/header.component";
 import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./pages/homepage/homepage.component";
 import SignInUpPage from "./pages/sign-in-up/sign-in-up.component";
+import SellPage from "./pages/sellPage/sellPage.component";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { connect } from "react-redux";
@@ -18,6 +19,13 @@ const App = ({ currentUser }) => {
           exact
           path="/signin"
           render={() => (currentUser ? <Redirect to="/" /> : <SignInUpPage />)}
+        />
+        <Route
+          exace
+          path="/sell"
+          render={() =>
+            currentUser ? <SellPage /> : <Redirect to="/signin" />
+          }
         />
       </Switch>
     </div>

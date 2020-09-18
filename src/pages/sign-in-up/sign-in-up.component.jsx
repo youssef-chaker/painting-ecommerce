@@ -4,13 +4,12 @@ import SignIn from "../../components/sign-in/sign-in.component";
 import SignUp from "../../components/sign-up/sign-up.component";
 import Waves from "../../components/waves/waves.component";
 import { connect } from "react-redux";
-import WithSpinner from "../../components/with-spinner/with-spinner.component";
 import Spinner from "../../components/spinner/spinner.component";
 
 const SignInUpPage = ({ isLoading }) => {
   return (
     <div>
-      {isLoading ? <Spinner /> : ""}
+      {isLoading ? <Spinner fullscreen /> : ""}
       <SignInUpContainer>
         <SignIn />
         <SignUp />

@@ -1,8 +1,8 @@
 import React from "react";
 import { SpinnerContainer, SpinnerItem } from "./spinner.styles";
 
-const Spinner = () => (
-  <SpinnerContainer>
+const Spinner = ({ ...props }) => (
+  <SpinnerContainer {...props}>
     <SpinnerItem />
   </SpinnerContainer>
 );

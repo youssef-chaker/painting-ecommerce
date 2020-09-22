@@ -9,6 +9,7 @@ import { signOut } from "../../redux/user/user.actions";
 import LockIcon from "@material-ui/icons/Lock";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import PersonIcon from "@material-ui/icons/Person";
+import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,9 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const UserMenu = ({ currentUser, count, signOut }) => {
+const UserMenu = ({ currentUser, count, signOut, history }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -36,16 +36,16 @@ const UserMenu = ({ currentUser, count, signOut }) => {
         onClick={(e) => setAnchorEl(e.currentTarget)}
       />
       <Menu
-        elevation={0}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
-        transformOrigin={{
-          vertical: "center",
-          horizontal: "center",
-        }}
-        style={{ top: "40px", left: "20px", color: "#333" }}
+        // elevation={0}
+        // anchorOrigin={{
+        //   vertical: "bottom",
+        //   horizontal: "left",
+        // }}
+        // transformOrigin={{
+        //   vertical: "center",
+        //   horizontal: "center",
+        // }}
+        style={{ top: "40px", left: "-10px", color: "#333" }}
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -54,7 +54,12 @@ const UserMenu = ({ currentUser, count, signOut }) => {
         <MenuItem onClick={handleClose}>
           <PersonIcon style={{ marginRight: "12px" }} /> Profile
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            history.push("/sell");
+          }}
+        >
           <AttachMoneyIcon style={{ marginRight: "12px" }} /> Sell
         </MenuItem>
         <MenuItem
@@ -75,4 +80,4 @@ const mapDispatchToProps = (dispatch) => ({
   signOut: () => dispatch(signOut()),
 });
 
-export default connect(null, mapDispatchToProps)(UserMenu);
+export default withRouter(connect(null, mapDispatchToProps)(UserMenu));

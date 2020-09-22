@@ -15,12 +15,13 @@ const userPersistConfig = {
 const rootPersistConfig = {
   key: "root",
   storage,
-  blacklist: ["sell"],
+  blacklist: ["sell", "shop"],
 };
 
 const rootReducer = combineReducers({
   user: persistReducer(userPersistConfig, userReducer),
   sell: sellReducer,
+  shop: shopReducer,
 });
 
-export default persistReducer(rootPersistConfig, rootReducer, shopReducer);
+export default persistReducer(rootPersistConfig, rootReducer);

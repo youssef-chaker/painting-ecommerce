@@ -7,6 +7,7 @@ import SellPage from "./pages/sellPage/sellPage.component";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { connect } from "react-redux";
+import ShopPage from "./pages/shopPage/shop.component";
 import "./App.css";
 
 const App = ({ currentUser }) => {
@@ -21,12 +22,13 @@ const App = ({ currentUser }) => {
           render={() => (currentUser ? <Redirect to="/" /> : <SignInUpPage />)}
         />
         <Route
-          exace
+          exact
           path="/sell"
           render={() =>
             currentUser ? <SellPage /> : <Redirect to="/signin" />
           }
         />
+        <Route exact path="/shop" component={ShopPage} />
       </Switch>
     </div>
   );

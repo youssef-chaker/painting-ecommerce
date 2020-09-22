@@ -1,0 +1,10 @@
+import { createSelector } from "reselect";
+
+const selectShop = (state) => state.shop;
+
+export const selectPosts = createSelector([selectShop], (shop) => shop.posts);
+
+export const selectIsFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+);

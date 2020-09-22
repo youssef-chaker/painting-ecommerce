@@ -3,6 +3,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from "./user/user.reducer";
 import sellReducer from "./sell/sell.reducer";
+import shopReducer from "./shop/shop.reducer";
 
 const userPersistConfig = {
   key: "user",
@@ -22,4 +23,4 @@ const rootReducer = combineReducers({
   sell: sellReducer,
 });
 
-export default persistReducer(rootPersistConfig, rootReducer);
+export default persistReducer(rootPersistConfig, rootReducer, shopReducer);

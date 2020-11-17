@@ -43,6 +43,7 @@ export const PriceTag = styled.span`
     content: "";
     position: absolute;
     bottom: 2.5rem;
+    right: 0;
     width: 3.5rem;
     height: 1.5rem;
     font-size: 12px;
@@ -58,10 +59,10 @@ export const PriceTag = styled.span`
         width: 7px;
         height: 100%;
         top: 0;
-        left: -6.5px;
+        right: -6.5px;
         padding: 0 0 7px;
         background: inherit;
-        border-radius: 5px 0 0 5px;
+        border-radius: 0 5px 5px 0;
     }
     &:after {
         content: "";
@@ -69,9 +70,9 @@ export const PriceTag = styled.span`
         width: 5px;
         height: 5px;
         bottom: -5px;
-        left: -4.5px;
+        right: -4.5px;
         background: gray;
-        border-radius: 5px 0 0 5px;
+        border-radius: 0 5px 5px 0;
     }
 `
 //

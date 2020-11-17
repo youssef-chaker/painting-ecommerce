@@ -27,6 +27,13 @@ const sellReducer = (state = INITIAL_STATE, action) => {
         postSuccess: null,
         isPosting: false,
       };
+    case SellActionTypes.RESET:
+      return {
+        ...state,
+        postError: null,
+        postSuccess: null,
+        isPosting: false
+      }
     default:
       return state;
   }

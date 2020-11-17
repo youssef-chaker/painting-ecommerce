@@ -16,7 +16,7 @@ export function* fetchPosts() {
 }
 
 function* fetchPostsAsync() {
-  const response = yield fetch(`https://localhost:5001/api/posts`, {
+  const response = yield fetch(`http://localhost:8080/api/posts`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

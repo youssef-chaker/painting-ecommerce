@@ -18,7 +18,7 @@ export function* post({ payload }) {
 function* postAsync(info) {
   info.price = Number.parseFloat(info.price);
   const token = yield select((state) => state.user.currentUser.token);
-  const response = yield fetch(`https://localhost:5001/api/Posts`, {
+  const response = yield fetch(`http://localhost:8080/api/posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -27,8 +27,8 @@ function* postAsync(info) {
     body: JSON.stringify(info),
   });
   const json = yield response.json();
-  if (!json.postId) {
-    throw Error(json.errors[Object.keys(json.errors)[0]][0]);
+  if (!json.id) {
+    throw Error("ayo what the fuck bruh ?!");
   }
   return json;
 }

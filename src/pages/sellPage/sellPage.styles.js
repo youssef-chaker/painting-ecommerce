@@ -34,8 +34,8 @@ export const SellPageFormContainer = styled.div`
 export const ImageContainer = styled.div`
   border-radius: 10px;
   cursor: pointer;
-  width: 250px;
-  height: 350px;
+  width: 300px;
+  height: 400px;
   border: rgba(0, 0, 0, 0.87) solid 0.5px;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ export const ImageContainer = styled.div`
   transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms;
 
   &:hover {
-    & > * {
+    & > *:not(img) {
       transform: scale(1.2);
       transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms;
     }

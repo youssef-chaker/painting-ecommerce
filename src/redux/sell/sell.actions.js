@@ -13,3 +13,7 @@ export const PostFailure = (error) => ({
 export const PostSuccess = () => ({
   type: SellActionTypes.POST_SUCCESS,
 });
+
+export const Reset = () => ({
+  type : SellActionTypes.RESET
+})

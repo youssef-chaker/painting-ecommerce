@@ -4,7 +4,7 @@ import { signInSuccess, signInFailure, signUpFailure } from "./user.actions";
 
 async function authenticateAsync(user) {
   const response = await fetch(
-    `https://localhost:5001/api/Users/authenticate`,
+    `http://localhost:8080/api/users/authenticate`,
     {
       method: "POST",
       headers: {
@@ -14,12 +14,13 @@ async function authenticateAsync(user) {
     }
   );
   const json = await response.json();
+  console.log(json);
   if (!json.token) throw Error(json.message);
   return json;
 }
 
 async function registerAsync(user) {
-  const response = await fetch(`https://localhost:5001/api/Users/register`, {
+  const response = await fetch(`http://localhost:8080/api/users/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

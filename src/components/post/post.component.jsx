@@ -1,11 +1,11 @@
 import React from "react";
+import {PostContainer,PriceTag} from "./post.styles";
 
-const Post = ({ title, image, price }) => (
-  <div>
-    <h3>{title}</h3>
-    <img alt="" src={image} />
-    <span>{price}</span>
-  </div>
+const Post = ({title, image, price, ...props}) => (
+    <PostContainer {...props} >
+        <img alt={title} src={image}/>
+        <PriceTag>{price} DT</PriceTag>
+    </PostContainer>
 );
 
 export default Post;
